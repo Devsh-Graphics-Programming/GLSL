@@ -1,6 +1,6 @@
 Name
 
-    EXT_ray_tracing
+    DEVSH_coroutine_shader
 
 Name Strings
 
@@ -46,9 +46,7 @@ Dependencies
 
     This extension interacts with GL_EXT_shader_realtime_clock.
 
-    This extension interacts with GL_KHR_memory_scope_semantics.
-
-    This extension interacts with GL_EXT_nonuniform_qualifier.
+    This extension interacts with GL_KHR_memory_scope_semantics?
 
     This extension interacts with GL_NV_shader_sm_builtins.
 
@@ -158,8 +156,7 @@ Changes to Chapter 4 of The OpenGL Shading Language Specification, Version 4.60
 Interactions with GL_KHR_shader_subgroup
 
     If GL_KHR_shader_subgroup is supported, the following built-in variables
-    are available in the ray generation, intersection, any-hit, closest-hit,
-    miss, and callable shading languages:
+    are available in the coroutine shading language:
 
         mediump in uint  gl_SubgroupSize;
         mediump in uint  gl_SubgroupInvocationID;
@@ -172,63 +169,39 @@ Interactions with GL_KHR_shader_subgroup
     and have the same sematics.
 
     Additionally, all the "Shader Invocation Group Functions" that are
-    not listed as compute-only are available in the ray generation,
-    intersection, any-hit, closest-hit, miss, and callable shading languages.
+    not listed as compute-only are available in the coroutine shading language.
 
 Interactions with GL_NV_shader_subgroup_partitioned
 
     If GL_NV_shader_subgroup_partitioned is supported, subgroupPartitionNV()
     and all the subgroupPartitioned*NV() builtin functions are available in
-    the ray generation, intersection, any-hit, closest-hit, miss, and callable
-    shading languages.
+    the coroutine shading language.
 
 Interactions with GL_NV_shaders_sm_builtins
 
     If GL_NV_shader_sm_builtins is supported, the builtin variables added by
-    this extension are available in the ray generation, intersection, any-hit,
-    closest-hit, miss, and callable shading languages.
+    this extension are available in the coroutine shading language.
 
 Interactions with GL_ARB_shader_ballot
 
-    If GL_ARB_shader_ballow is supported, the builtin variables and functions
-    added by this extension are available in the ray generation, intersection,
-    any-hit, closest-hit, miss, and callable shading languages.
+    If GL_ARB_shader_ballot is supported, the builtin variables and functions
+    added by this extension are available in the coroutine shading language.
 
 Interactions with GL_ARB_shader_group_vote
 
     If GL_ARB_shader_group_vote is supported, the builtin functions added by
-    this extension are available in the ray generation, intersection, any-hit,
-    closest-hit, miss, and callable shading languages.
+    this extension are available in the coroutine language.
 
 Interactions with GL_ARB_shader_clock
 
     If GL_ARB_shader_clock is supported, the new timing functions added by
-    this extension are available in the ray generation, intersection, any-hit,
-    closest-hit, miss, and callable shading languages.
+    this extension are available in the coroutine shading language.
 
 Interactions with GL_EXT_shader_realtime_clock
 
     If GL_EXT_shader_realtime_clock is supported, the new timing functions
-    added by this extension are available in the ray generation, intersection,
-    any-hit, closest-hit, miss, and callable shading languages.
+    added by this extension are available in the coroutine shading language.
 
-Interactions with GL_EXT_nonuniform_qualifier
-
-    If GL_EXT_nonuniform_qualifier is supported, arrays of
-    accelerationStructureEXT can be indexed with non-unform integral
-    expressions when they are decorated with the nonuniformEXT qualifier.
-
-Interactions with GL_EXT_scalar_block_layout
-
-    If GL_EXT_scalar_block_layout is supported, buffer blocks with
-    a layout of shaderRecordEXT can also be laid out using the scalar
-    block layout.
-
-Interactions with GL_EXT_ray_flags_primitive_culling
-
-    If GL_EXT_ray_flags_primitive_culling is supported, ray flags added
-    by this extension can be used as flags for the 'rayflags' argument
-    for traceRayEXT() call, or for comparing value to gl_IncomingRayFlagsEXT.
 
 Issues
 
